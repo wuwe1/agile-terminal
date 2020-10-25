@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <v-alert border="left" colored-border type="info" elevation="2">
+      单击Tab, 并输入命令: /eth => 跳转至以太坊图表
+    </v-alert>
+    <CoinMarket />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import CoinMarket from "@/components/CoinMarket";
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
-  }
-}
+    CoinMarket,
+  },
+};
 </script>
+
+<style>
+</style>
