@@ -52,6 +52,7 @@ import axios from "axios";
 const COINS_MARKETS_URL =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=1h,24h,7d";
 export default {
+  name: 'CoinMarket',
   data: () => ({
     coins: [],
     isLoading: true,

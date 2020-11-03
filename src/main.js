@@ -2,9 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import vuetify from './plugins/vuetify';
+import vuetify from '@/vuetify'
+import { registerPlugins } from './plugins'
 
 Vue.config.productionTip = false
+
+registerPlugins(Vue)
 
 const Web3 = require('web3')
 const web3 = new Web3(new Web3.providers.HttpProvider(`https://mainnet.infura.io/v3/${process.env.VUE_APP_INFURA_PROJECT_ID}`))

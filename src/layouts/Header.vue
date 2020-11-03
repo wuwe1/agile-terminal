@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar color="white" class="v-bar--underline" flat app>
-      <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="updateDrawer(!drawer)"></v-app-bar-nav-icon>
 
       <Search/>
 
@@ -19,18 +19,19 @@
 <script>
 import Drawer from "@/layouts/Drawer";
 import Search from "@/layouts/Search";
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   components: {
     Drawer,
     Search
   },
   data: () => ({
-    drawer: false,
-    
   }),
+  computed:{
+    ...mapState(['drawer'])
+  },
   methods: {
-    ...mapMutations(["toggleDrawer"]),
+    ...mapMutations(["updateDrawer"]),
   },
 };
 </script>

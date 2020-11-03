@@ -32,15 +32,22 @@
       </v-col>
     </v-row>
 
-    <v-data-table :headers="headers" :items="items"> </v-data-table>
+    <v-data-table
+      :headers="headers"
+      :items="items"
+      :loading="isLoading"
+      loading-text="加载中..."
+    >
+    </v-data-table>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { tokens } from "@/constant/tokens";
-import { erc20abi } from "@/constant/erc20abi";
+import { tokens } from "@/data/tokens";
+import { erc20abi } from "@/data/erc20abi";
 export default {
+  name: 'AccountBalance',
   data: () => ({
     isLoading: false,
     isCoinMarketsLoading: false,

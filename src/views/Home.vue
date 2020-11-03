@@ -8,13 +8,6 @@
 </template>
 
 <script>
-import CoinMarket from "@/components/CoinMarket";
 export default {
-  components: {
-    CoinMarket,
-  },
 };
 </script>
-
-<style>
-</style>

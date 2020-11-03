@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer id="drawer" :value="drawer" app width="240">
+  <v-navigation-drawer id="drawer" v-model="drawer" app width="240">
     <template #prepend>
       <DrawerPrepend />
     </template>
@@ -52,7 +52,14 @@ export default {
     ],
   }),
   computed: {
-    ...mapState(["drawer"]),
+    drawer: {
+      get() {
+        return this.$store.state.drawer
+      },
+      set(value) {
+        this.$store.commit('updateDrawer', value)
+      }
+    }
   },
   methods: {
     onClickLink(_path) {
